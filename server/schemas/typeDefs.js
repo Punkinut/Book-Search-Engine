@@ -32,5 +32,6 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
  }
 `;
+// Still need a few more mutations
 
 module.exports = typeDefs
