@@ -4,13 +4,14 @@ const typeDefs = gql`
  type User {
      _id: ID
      username: String
+     email: String
+     bookCount: Int
+     savedBooks: [Book]
  }
 
  type Query {
-     placeHolder: [User]
+     me: User
  }
-
-
 `;
 
 module.exports = typeDefs
