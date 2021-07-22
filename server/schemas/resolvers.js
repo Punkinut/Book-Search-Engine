@@ -34,6 +34,10 @@ const resolvers = {
   
         return { token, user };
       },
+      saveBook: async (parent, { authors, description, title, bookId, image, link }) => {
+        const user;
+        return { user };
+      }
     }
   };
 
