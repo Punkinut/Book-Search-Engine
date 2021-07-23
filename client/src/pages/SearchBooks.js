@@ -65,26 +65,16 @@ const SearchBooks = () => {
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    console.log({...bookToSave}, token)
-
     if (!token) {
       return false;
     }
 
     try {
-      // What I'm trying to replace
-      // const response = await saveBook(bookToSave, token);
+      const {authors, description, title, bookId, image} = {...bookToSave};
 
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
-
-      // My Replacement
-      console.log('Before try')
-      const { data } = await save({
-        variables: { ...bookToSave, token },
+      await save({
+        variables: { authors, description: description || 'No Description', title, bookId, image: image || 'No Image', link: `https://books.google.com/ebooks?id=${bookId}` },
       });
-      console.log('After Try')
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
