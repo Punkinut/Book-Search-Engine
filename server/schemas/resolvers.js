@@ -43,12 +43,15 @@ const resolvers = {
         return user;
       },
       removeBook: async (parent, {bookId}, context) => {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { savedBooks: { bookId: bookId } } },
-          { new: true }
-        )
-        return updatedUser;
+        if (context.user) {
+          const updatedUser = await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $pull: { savedBooks: { bookId: bookId } } },
+            { new: true }
+          )
+          return updatedUser;
+        }
+        throw new AuthenticationError('Cannot find a user with this id!');
       }
     }
   };
