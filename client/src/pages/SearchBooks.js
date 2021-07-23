@@ -73,7 +73,13 @@ const SearchBooks = () => {
       const {authors, description, title, bookId, image} = {...bookToSave};
 
       await save({
-        variables: { authors, description: description || 'No Description', title, bookId, image: image || 'No Image', link: `https://books.google.com/ebooks?id=${bookId}` },
+        variables: { 
+        authors, 
+        description: description || 'No Description', 
+        title, 
+        bookId, 
+        image: image || 'No Image',
+        link: `https://books.google.com/ebooks?id=${bookId}` },
       });
 
       // if book successfully saves to user's account, save book id to state
