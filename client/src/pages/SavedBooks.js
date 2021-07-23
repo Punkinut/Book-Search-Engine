@@ -18,7 +18,7 @@ const SavedBooks = () => {
   // Remove book mutation
   const [removeBook] = useMutation(REMOVE_BOOK);
   
-  useEffect(() => {if (!loading && data) { setUserData(data.me)}}, [loading, data])
+  useEffect(() => {if (!loading) { setUserData(data.me)}})
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
