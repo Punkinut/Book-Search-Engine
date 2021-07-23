@@ -34,9 +34,13 @@ const resolvers = {
   
         return { token, user };
       },
-      saveBook: async (parent, { authors, description, title, bookId, image, link }) => {
-        // const user;
-        // return { user };
+      saveBook: async (parent, { authors, description, title, bookId, image, link }, context) => {
+        const user = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedBooks: authors, description, title, bookId, image, link} },
+          { new: true, runValidators: true }
+        );
+        return { user };
       }
     }
   };
