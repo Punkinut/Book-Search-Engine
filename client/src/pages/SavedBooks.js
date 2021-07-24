@@ -15,17 +15,7 @@ const SavedBooks = () => {
   // Get me query
   const { data } = useQuery(GET_ME);
   // Remove book mutation
-  const [removeBook] = useMutation(REMOVE_BOOK, {
-    update(cache, { data: { removeBook } }) {
-      try {
-        cache.writeQuery({
-          query: GET_ME
-        })
-      } catch (err) {
-        console.log(err)
-      }
-    }
-  });
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
   useEffect(() => {
     if (data?.me) {

@@ -8,11 +8,6 @@ import Auth from '../utils/auth';
 
 const AppNavbar = () => {
 
-  const reloadTime = () => {
-    window.location.reload()
-    window.location.href = 'http://localhost:3000/saved'
-  }
-
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
@@ -32,7 +27,7 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved' onClick={reloadTime}>
+                  <Nav.Link as={Link} to='/saved'>
                     See Your Books
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
