@@ -14,8 +14,6 @@ const SavedBooks = () => {
 
   // Get me query
   const { data } = useQuery(GET_ME);
-
-  console.log(data)
   // Remove book mutation
   const [removeBook] = useMutation(REMOVE_BOOK);
 
@@ -38,14 +36,13 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await removeBook({
+      await removeBook({
         variables: {
           bookId
         },
       });
-      setUserData(response);
-      removeBookId(bookId);
       window.location.reload()
+      removeBookId(bookId);
     } catch (err) {
       console.error(err);
     }
