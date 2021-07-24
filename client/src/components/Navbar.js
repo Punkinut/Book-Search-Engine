@@ -8,11 +8,11 @@ import Auth from '../utils/auth';
 
 const AppNavbar = () => {
 
-  const reloadTime = async () => {
-    const rel = await window.location.reload()
-    window.location.pathname = '/saved'
+  const reloadTime = () => {
+    window.location.reload()
+    window.location.href = 'http://localhost:3000/saved'
   }
-  
+
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
