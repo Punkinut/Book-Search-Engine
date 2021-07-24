@@ -38,7 +38,6 @@ const SavedBooks = () => {
         },
       });
       setUserData(response);
-      window.location.reload()
       removeBookId(bookId);
     } catch (err) {
       console.error(err);
