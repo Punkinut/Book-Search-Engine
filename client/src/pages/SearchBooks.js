@@ -4,7 +4,6 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import Auth from '../utils/auth';
 
 import { useMutation } from '@apollo/client';
-import { GET_ME } from '../utils/queries';
 import { SAVE_BOOK } from '../utils/mutations';
 
 import { searchGoogleBooks } from '../utils/API';
@@ -12,17 +11,7 @@ import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
 
-  const [save] = useMutation(SAVE_BOOK, {
-    update(cache, { data: { save } }) {
-      try {
-        cache.readQuery({
-          query: GET_ME
-        })
-      } catch (err) {
-        console.log(err)
-      }
-    }
-  });
+  const [save] = useMutation(SAVE_BOOK);
 
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -93,7 +82,6 @@ const SearchBooks = () => {
         image: image || 'No Image',
         link: `https://books.google.com/ebooks?id=${bookId}` },
       });
-
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
