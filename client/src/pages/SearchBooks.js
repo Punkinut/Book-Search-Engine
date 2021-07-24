@@ -6,8 +6,12 @@ import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
 
-import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+
+// Third party google books API
+const searchGoogleBooks = (query) => {
+  return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+};
 
 const SearchBooks = () => {
 
