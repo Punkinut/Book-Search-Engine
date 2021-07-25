@@ -17,6 +17,7 @@ body {
 
 .bg-bl {
   background-color: var(--black) !important;
+  border: none !important;
 }
 
 .bl {
@@ -100,6 +101,20 @@ h6 {
   flex-direction: column;
   row-gap: 30px;
   align-items: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: none;
+  padding: 25px;
+  width: 400px !important;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
 }
 
 .button {
