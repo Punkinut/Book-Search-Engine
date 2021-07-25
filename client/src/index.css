@@ -1,5 +1,41 @@
+:root {
+  --white: white;
+  --black: #333333;
+}
+
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-black {
+  background-color: var(--white);
+}
+
+.bg-bl {
+  background-color: var(--black) !important;
+}
+
+.bl {
+  color: var(--black);
+}
+
+.header {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.nav {
+  padding-top: 30px;
+}
+
+.input {
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 20px;
 }
 
 h1,
@@ -8,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .small {
