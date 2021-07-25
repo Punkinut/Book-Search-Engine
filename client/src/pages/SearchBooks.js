@@ -115,7 +115,6 @@ const SearchBooks = () => {
           </Form>
         </Container>
       </Jumbotron>
-
       <Container>
         <h2>
           {searchedBooks.length

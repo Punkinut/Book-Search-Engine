@@ -32,6 +32,7 @@ body {
 .nav {
   padding-top: 30px;
   padding-bottom: 30px;
+  text-align: right;
 }
 
 .general-text {
@@ -87,5 +88,10 @@ h6 {
 @media screen and (max-width: 575px) {
   .book-results {
     bottom: 50px;
+  }
+
+  .extra {
+    padding-top: 40px;
+    padding-right: 10px;
   }
 }
