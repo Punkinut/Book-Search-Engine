@@ -95,6 +95,18 @@ h6 {
   transform: rotate(180deg);
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+}
+
+.button {
+  border: none !important;
+  background-color: white;
+}
+
 .icon:hover {
   opacity: 60%;
 }
