@@ -129,20 +129,20 @@ const SearchBooks = () => {
             return (
               <Card className='card' key={book.bookId} border='dark'>
                 {book.image ? (
-                  <Card.Img className='image' src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+                  <Card.Img className='image round' src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Text style={{opacity: '0.8', lineHeight: '30px'}}>{`${book.description.slice(0, 90)} . . .`}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
-                      className='btn-block btn-info bg-bl'
+                      className='btn-block btn-info bg-bl hover'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
-                        : 'Save this Book!'}
+                        ? 'Already Saved'
+                        : 'Save Book'}
                     </Button>
                   )}
                 </Card.Body>

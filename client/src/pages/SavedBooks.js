@@ -78,9 +78,9 @@ const SavedBooks = () => {
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
-                  <Button className='btn-block btn-danger bg-bl' onClick={() => handleDeleteBook(book.bookId)}>
-                    Delete this Book!
+                  <Card.Text style={{opacity: '0.8', lineHeight: '30px'}}>{`${book.description.slice(0, 80)} . . .`}</Card.Text>
+                  <Button className='btn-block btn-danger bg-bl hover' onClick={() => handleDeleteBook(book.bookId)}>
+                    Delete Book
                   </Button>
                 </Card.Body>
               </Card>
