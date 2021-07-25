@@ -111,11 +111,6 @@ const SearchBooks = () => {
                   className='input'
                 />
               </Col>
-              {/* <Col>
-                <Button type='submit' variant='success' size='lg'>
-                  Submit Search
-                </Button>
-              </Col> */}
             </Form.Row>
           </Form>
         </Container>

@@ -3,6 +3,10 @@
   --black: #333333;
 }
 
+::placeholder {
+  font-size: 16px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -16,7 +20,7 @@ body {
 }
 
 .bl {
-  color: var(--black);
+  color: var(--black) !important;
 }
 
 .header {
@@ -27,6 +31,23 @@ body {
 
 .nav {
   padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.general-text {
+  text-align: center;
+}
+
+.nav-text {
+  font-size: 14px !important;
+}
+
+.book-results {
+  text-align: center;
+  opacity: 60%;
+  font-size: 13px;
+  position: relative;
+  bottom: 90px;
 }
 
 .input {
@@ -35,6 +56,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  font-size: 16px;
   padding: 20px;
 }
 
@@ -50,4 +72,20 @@ h6 {
 .small {
   font-weight: 300;
   font-style: italic;
+}
+
+.center {
+  margin: auto;
+}
+
+.full-width {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 575px) {
+  .book-results {
+    bottom: 50px;
+  }
 }
