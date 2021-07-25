@@ -56,7 +56,8 @@ body {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 600px;
+  height: 50px !important;
   font-size: 16px;
   padding: 20px;
 }
@@ -85,13 +86,38 @@ h6 {
   justify-content: center;
 }
 
+.icon {
+  width: 25px;
+  transition: all 100ms ease-in-out;
+}
+
+.login {
+  transform: rotate(180deg);
+}
+
+.icon:hover {
+  opacity: 60%;
+}
+
+.icon:active {
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 991px) {
+  .extra {
+    padding-top: 20px;
+    padding-right: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .input {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .book-results {
     bottom: 50px;
-  }
-
-  .extra {
-    padding-top: 40px;
-    padding-right: 10px;
   }
 }
