@@ -11,6 +11,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.image {
+  image-rendering: optimizeQuality;
+}
+
 .bg-black {
   background-color: var(--white);
 }

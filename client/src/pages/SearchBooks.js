@@ -127,9 +127,9 @@ const SearchBooks = () => {
         <CardColumns className='card-container'>
           {searchedBooks.map((book) => {
             return (
-              <Card key={book.bookId} border='dark'>
+              <Card className='card' key={book.bookId} border='dark'>
                 {book.image ? (
-                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+                  <Card.Img className='image' src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

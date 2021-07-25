@@ -74,7 +74,7 @@ const SavedBooks = () => {
           {userData.savedBooks.map((book) => {
             return (
               <Card  className='card' key={book.bookId} border='dark'>
-                {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
+                {book.image ? <Card.Img src={book.image} className='round' alt={`The cover for ${book.title}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
